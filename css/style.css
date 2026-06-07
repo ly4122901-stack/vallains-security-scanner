@@ -1423,7 +1423,7 @@ body {
     .input-group {
         flex-direction: column;
     }
-    .btn-execute {
+    .btn-execute, .btn-scan-all {
         justify-content: center;
     }
     .features-grid {
@@ -1440,6 +1440,510 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+/* =============================================================================
+   NEW STYLES - Vallains v2.0
+   ============================================================================= */
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-3);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-gold {
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-bright));
+    box-shadow: 0 0 10px var(--gold-glow);
+}
+
+.progress-success {
+    background: linear-gradient(90deg, #059669, var(--success));
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+.progress-danger {
+    background: linear-gradient(90deg, #B91C1C, var(--danger));
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+}
+
+/* Scan Progress */
+.scan-progress {
+    background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
+    border: 1px solid var(--gold-soft);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.scan-progress h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 12px;
+}
+
+.scan-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.scan-item {
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.scan-item.done {
+    background: var(--success-soft);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.scan-item.pending {
+    background: var(--bg-3);
+    color: var(--text-2);
+    border: 1px solid var(--line);
+}
+
+/* Vulnerability Grid */
+.vuln-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vuln-item {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    transition: all 0.3s ease;
+}
+
+.vuln-item:hover {
+    transform: translateX(-3px);
+    border-color: var(--gold-soft);
+}
+
+.vuln-item.vuln-critical {
+    border-left: 4px solid var(--danger);
+    background: var(--danger-soft);
+}
+
+.vuln-item.vuln-high {
+    border-left: 4px solid var(--warning);
+}
+
+.vuln-item.vuln-medium {
+    border-left: 4px solid var(--info);
+}
+
+.vuln-item.vuln-info {
+    border-left: 4px solid var(--text-3);
+}
+
+.vuln-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.vuln-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-0);
+}
+
+.vuln-status {
+    font-size: 12px;
+    color: var(--text-2);
+}
+
+/* Port items with risk colors */
+.port-item.port-critical {
+    border-color: var(--danger);
+    background: var(--danger-soft);
+}
+
+.port-item.port-high {
+    border-color: var(--warning);
+    background: var(--warning-soft);
+}
+
+.port-item.port-medium {
+    border-color: var(--info);
+    background: var(--info-soft);
+}
+
+.port-item.port-low {
+    border-color: var(--success);
+    background: var(--success-soft);
+}
+
+/* Stats row updated */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.stat-box:hover {
+    border-color: var(--gold-soft);
+    transform: translateY(-2px);
+}
+
+/* Feature card hover effects */
+.feature-card {
+    background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--gold-soft);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--gold-soft);
+    border: 1px solid var(--gold-soft);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.feature-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-0);
+    margin: 0 0 6px;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: var(--text-2);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Hero actions */
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-scan-all {
+    background: linear-gradient(135deg, var(--danger) 0%, #991B1B 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-ar);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.btn-scan-all:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5);
+}
+
+/* Results body improvements */
+.results-body {
+    padding: 24px;
+}
+
+.result-section {
+    margin-bottom: 28px;
+    animation: fadeIn 0.3s ease;
+}
+
+.result-section:last-child {
+    margin-bottom: 0;
+}
+
+.result-section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-section-title::before {
+    content: '▸';
+    color: var(--gold);
+}
+
+/* Loading overlay */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease;
+}
+
+.loader-card {
+    background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
+    border: 2px solid var(--gold-soft);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-lg), 0 0 60px rgba(212, 175, 55, 0.3);
+    min-width: 360px;
+}
+
+/* Subdomain list improvements */
+.subdomain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-left: 4px;
+}
+
+.subdomain-item {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-0);
+    direction: ltr;
+    text-align: left;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.subdomain-item:hover {
+    border-color: var(--gold-soft);
+    background: var(--gold-soft);
+    transform: translateX(-4px);
+}
+
+/* KV Grid improvements */
+.kv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.kv-item {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.kv-item:hover {
+    border-color: var(--gold-soft);
+}
+
+.kv-key {
+    font-size: 11px;
+    color: var(--text-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.kv-val {
+    font-size: 14px;
+    color: var(--text-0);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    word-break: break-all;
+    direction: ltr;
+    text-align: left;
+}
+
+.kv-val.list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12.5px;
+}
+
+.kv-val.list span {
+    background: var(--bg-3);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* GeoIP card */
+.geoip-card {
+    background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 14px;
+}
+
+.geoip-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+}
+
+.geoip-ip {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    direction: ltr;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-2);
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+
+.empty-state h4 {
+    color: var(--text-1);
+    font-size: 16px;
+    margin: 0 0 6px;
+}
+
+.empty-state p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Scanner card */
+.scanner-card {
+    background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    transition: all 0.3s ease;
+}
+
+.scanner-card:hover {
+    border-color: var(--gold-soft);
+    transform: translateY(-2px);
+}
+
+.scanner-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.scanner-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-0);
+    margin: 0;
+}
+
+.scanner-note {
+    font-size: 12px;
+    color: var(--text-2);
+    margin: 0 0 14px;
+    line-height: 1.5;
+}
+
+.scanner-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold-soft);
+    color: var(--gold);
+    border: 1px solid var(--gold-soft);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.scanner-link:hover {
+    background: var(--gold);
+    color: #0a0a0c;
 }
 
 ::-webkit-scrollbar {

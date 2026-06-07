@@ -116,6 +116,18 @@
                 <span class="tab-icon">✧</span>
                 <span>سمعة IP</span>
             </button>
+            <button class="tab-btn" data-tab="vulns">
+                <span class="tab-icon">🔴</span>
+                <span>الثغرات</span>
+            </button>
+            <button class="tab-btn" data-tab="email">
+                <span class="tab-icon">📧</span>
+                <span>أمان البريد</span>
+            </button>
+            <button class="tab-btn" data-tab="dnssec">
+                <span class="tab-icon">🔐</span>
+                <span>DNSSEC</span>
+            </button>
         </div>
     </nav>
 
@@ -247,8 +259,11 @@
             <div class="input-group">
                 <input type="text" id="info-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
                 <button class="btn-execute" data-action="info">
-                    <span class="btn-label">بدء الفحص</span>
+                    <span class="btn-label">فحص</span>
                     <span class="btn-icon">◈</span>
+                </button>
+                <button class="btn-scan-all btn-primary" style="background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);">
+                    <span class="btn-label">🔴 فحص شامل</span>
                 </button>
             </div>
         </div>
@@ -403,6 +418,48 @@
                 <button class="btn-execute" data-action="reputation">
                     <span class="btn-label">تحليل السمعة</span>
                     <span class="btn-icon">✧</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-vulns">
+            <div class="section-header">
+                <h2 class="section-title-large">🔴 فحص الثغرات الأمنية</h2>
+                <p class="section-desc">اكتشاف الثغرات الشائعة: .git exposed، debug mode، phpinfo، open directories</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="vulns-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="vulns">
+                    <span class="btn-label">فحص الثغرات</span>
+                    <span class="btn-icon">🔴</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-email">
+            <div class="section-header">
+                <h2 class="section-title-large">📧 أمان البريد الإلكتروني</h2>
+                <p class="section-desc">فحص SPF, DKIM, DMARC records وأمان خوادم البريد</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="email-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="email">
+                    <span class="btn-label">فحص أمان البريد</span>
+                    <span class="btn-icon">📧</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-dnssec">
+            <div class="section-header">
+                <h2 class="section-title-large">🔐 DNSSEC و DNS</h2>
+                <p class="section-desc">فحص DNSSEC وانتشار DNS عبر خوادم متعددة</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="dnssec-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="dnssec">
+                    <span class="btn-label">فحص DNSSEC</span>
+                    <span class="btn-icon">🔐</span>
                 </button>
             </div>
         </div>
