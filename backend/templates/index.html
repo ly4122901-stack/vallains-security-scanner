@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vallains — أداة فحص المواقع الاحترافية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Cinzel:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="bg-effects">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="brand">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 4L8 16v16c0 13.3 9.4 25.3 22 28 12.6-2.7 22-14.7 22-28V16L30 4z" stroke="url(#g1)" stroke-width="2" fill="rgba(212,175,55,0.05)"/>
+                        <path d="M30 14L18 20.4v9.6c0 7.8 5.5 14.7 12 16.4 6.5-1.7 12-8.6 12-16.4v-9.6L30 14z" fill="url(#g2)" opacity="0.6"/>
+                        <text x="30" y="38" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="18" fill="url(#g3)">V</text>
+                        <defs>
+                            <linearGradient id="g1" x1="0" y1="0" x2="60" y2="60">
+                                <stop offset="0%" stop-color="#D4AF37"/>
+                                <stop offset="100%" stop-color="#8B6F1F"/>
+                            </linearGradient>
+                            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="60">
+                                <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.4"/>
+                                <stop offset="100%" stop-color="#8B6F1F" stop-opacity="0.1"/>
+                            </linearGradient>
+                            <linearGradient id="g3" x1="0" y1="0" x2="0" y2="40">
+                                <stop offset="0%" stop-color="#F5DEB3"/>
+                                <stop offset="100%" stop-color="#D4AF37"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-name">VALLAINS</h1>
+                    <p class="brand-tagline">أداة فحص وتحليل المواقع الاحترافية</p>
+                </div>
+            </div>
+            <div class="header-status">
+                <span class="status-dot"></span>
+                <span class="status-text">متصل</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="tabs-nav">
+        <div class="tabs-inner">
+            <button class="tab-btn active" data-tab="home">
+                <span class="tab-icon">⌂</span>
+                <span>الرئيسية</span>
+            </button>
+            <button class="tab-btn" data-tab="info">
+                <span class="tab-icon">◈</span>
+                <span>جمع المعلومات</span>
+            </button>
+            <button class="tab-btn" data-tab="resolve">
+                <span class="tab-icon">⊕</span>
+                <span>معرفة IP الموقع</span>
+            </button>
+            <button class="tab-btn" data-tab="reverse">
+                <span class="tab-icon">⇆</span>
+                <span>عكس IP</span>
+            </button>
+            <button class="tab-btn" data-tab="malware">
+                <span class="tab-icon">☣</span>
+                <span>البرمجيات الخبيثة</span>
+            </button>
+            <button class="tab-btn" data-tab="phishing">
+                <span class="tab-icon">⚓</span>
+                <span>التصيد الاحتيالي</span>
+            </button>
+            <button class="tab-btn" data-tab="spam">
+                <span class="tab-icon">✦</span>
+                <span>البريد العشوائي</span>
+            </button>
+            <button class="tab-btn" data-tab="blacklist">
+                <span class="tab-icon">◉</span>
+                <span>القائمة السوداء</span>
+            </button>
+            <button class="tab-btn" data-tab="ssl">
+                <span class="tab-icon">🔒</span>
+                <span>SSL/TLS</span>
+            </button>
+            <button class="tab-btn" data-tab="ports">
+                <span class="tab-icon">▤</span>
+                <span>فحص المنافذ</span>
+            </button>
+            <button class="tab-btn" data-tab="subdomains">
+                <span class="tab-icon">⌘</span>
+                <span>النطاقات الفرعية</span>
+            </button>
+            <button class="tab-btn" data-tab="redirects">
+                <span class="tab-icon">↬</span>
+                <span>التحويلات</span>
+            </button>
+            <button class="tab-btn" data-tab="reputation">
+                <span class="tab-icon">✧</span>
+                <span>سمعة IP</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="tab-content active" id="tab-home">
+            <div class="hero">
+                <div class="hero-content">
+                    <p class="hero-eyebrow">منصة احترافية لفحص وتحليل المواقع</p>
+                    <h2 class="hero-title">اكتشف <span class="gold">الحقيقة</span> خلف أي موقع</h2>
+                    <p class="hero-desc">أداة Vallains تتيح لك فحص المواقع بدقة عالية، جمع المعلومات، كشف التهديدات، تحليل DNS، فحص SSL، وأكثر من 12 نوع فحص متخصص.</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" data-tab-action="info">
+                            <span>بدء فحص شامل</span>
+                            <span class="btn-arrow">←</span>
+                        </button>
+                        <button class="btn-ghost" data-tab-action="resolve">
+                            <span>كشف IP موقع</span>
+                        </button>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-num">13</div>
+                            <div class="stat-label">نوع فحص</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">7+</div>
+                            <div class="stat-label">محركات سمعة</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">10</div>
+                            <div class="stat-label">قوائم DNSBL</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">30+</div>
+                            <div class="stat-label">منفذ يفحص</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="orbit">
+                        <div class="orbit-ring ring-1"></div>
+                        <div class="orbit-ring ring-2"></div>
+                        <div class="orbit-ring ring-3"></div>
+                        <div class="orbit-core">
+                            <div class="core-inner"></div>
+                        </div>
+                        <div class="orbit-node n1">DNS</div>
+                        <div class="orbit-node n2">SSL</div>
+                        <div class="orbit-node n3">IP</div>
+                        <div class="orbit-node n4">WHOIS</div>
+                        <div class="orbit-node n5">SCAN</div>
+                        <div class="orbit-node n6">GEO</div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="features">
+                <h3 class="section-title">أقسام الفحص المتوفرة</h3>
+                <div class="features-grid">
+                    <div class="feature-card" data-tab-action="info">
+                        <div class="feature-icon">◈</div>
+                        <h4>جمع المعلومات</h4>
+                        <p>WHOIS، DNS، Headers، SSL، Subdomains</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="resolve">
+                        <div class="feature-icon">⊕</div>
+                        <h4>كشف IP</h4>
+                        <p>تحويل الدومين إلى عنوان IP مع GeoIP</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="reverse">
+                        <div class="feature-icon">⇆</div>
+                        <h4>عكس IP</h4>
+                        <p>إيجاد كل الدومينات على خادم معين</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="malware">
+                        <div class="feature-icon">☣</div>
+                        <h4>البرمجيات الخبيثة</h4>
+                        <p>VirusTotal، Google، Sucuri، URLVoid</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="phishing">
+                        <div class="feature-icon">⚓</div>
+                        <h4>التصيد الاحتيالي</h4>
+                        <p>PhishTank، Google Safe Browsing</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="spam">
+                        <div class="feature-icon">✦</div>
+                        <h4>البريد العشوائي</h4>
+                        <p>Spamhaus، SURBL، Spamcop</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="blacklist">
+                        <div class="feature-icon">◉</div>
+                        <h4>القائمة السوداء</h4>
+                        <p>فحص IP في 10+ قاعدة DNSBL</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="ssl">
+                        <div class="feature-icon">🔒</div>
+                        <h4>SSL/TLS</h4>
+                        <p>تفاصيل الشهادة، الانتهاء، SANs</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="ports">
+                        <div class="feature-icon">▤</div>
+                        <h4>فحص المنافذ</h4>
+                        <p>اكتشاف المنافذ المفتوحة والخدمات</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="subdomains">
+                        <div class="feature-icon">⌘</div>
+                        <h4>النطاقات الفرعية</h4>
+                        <p>اكتشاف Subdomains عبر Certificate Transparency</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="redirects">
+                        <div class="feature-icon">↬</div>
+                        <h4>سلسلة التحويلات</h4>
+                        <p>تتبع 301/302 redirects وكشف HSTS</p>
+                    </div>
+                    <div class="feature-card" data-tab-action="reputation">
+                        <div class="feature-icon">✧</div>
+                        <h4>سمعة IP</h4>
+                        <p>AbuseIPDB، GeoIP، نوع المضيف</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="tab-info">
+            <div class="section-header">
+                <h2 class="section-title-large">◈ جمع المعلومات الشامل</h2>
+                <p class="section-desc">فحص كامل يشمل WHOIS, DNS, HTTP Headers, SSL, Subdomains, GeoIP</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="info-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="info">
+                    <span class="btn-label">بدء الفحص</span>
+                    <span class="btn-icon">◈</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-resolve">
+            <div class="section-header">
+                <h2 class="section-title-large">⊕ كشف عنوان IP</h2>
+                <p class="section-desc">تحويل اسم الدومين إلى عنوان IP مع بيانات GeoIP الكاملة</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="resolve-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="resolve">
+                    <span class="btn-label">كشف IP</span>
+                    <span class="btn-icon">⊕</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-reverse">
+            <div class="section-header">
+                <h2 class="section-title-large">⇆ عكس DNS / IP</h2>
+                <p class="section-desc">إيجاد اسم المضيف وكل المواقع المستضافة على نفس الخادم</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="reverse-target" class="text-input" placeholder="8.8.8.8" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="reverse">
+                    <span class="btn-label">عكس البحث</span>
+                    <span class="btn-icon">⇆</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-malware">
+            <div class="section-header">
+                <h2 class="section-title-large">☣ فحص البرمجيات الخبيثة</h2>
+                <p class="section-desc">فحص عبر أقوى محركات الفحص العالمية لكشف Malware, Trojan, Virus</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="malware-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="threat-malware">
+                    <span class="btn-label">فحص شامل</span>
+                    <span class="btn-icon">☣</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-phishing">
+            <div class="section-header">
+                <h2 class="section-title-large">⚓ فحص التصيد الاحتيالي</h2>
+                <p class="section-desc">اكتشاف مواقع الـ Phishing وقواعد بيانات الـ Fraud المعروفة</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="phishing-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="threat-phishing">
+                    <span class="btn-label">كشف التصيد</span>
+                    <span class="btn-icon">⚓</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-spam">
+            <div class="section-header">
+                <h2 class="section-title-large">✦ فحص البريد العشوائي (Spam)</h2>
+                <p class="section-desc">التحقق من إدراج الـ IP في قوائم Spamhaus و SURBL العالمية</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="spam-target" class="text-input" placeholder="example.com أو IP" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="blacklist">
+                    <span class="btn-label">فحص الـ Spam</span>
+                    <span class="btn-icon">✦</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-blacklist">
+            <div class="section-header">
+                <h2 class="section-title-large">◉ فحص القائمة السوداء DNSBL</h2>
+                <p class="section-desc">اختبار IP في 10 قواعد بيانات عالمية معروفة للقوائم السوداء</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="blacklist-target" class="text-input" placeholder="example.com أو IP" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="blacklist">
+                    <span class="btn-label">فحص القوائم</span>
+                    <span class="btn-icon">◉</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-ssl">
+            <div class="section-header">
+                <h2 class="section-title-large">🔒 فحص شهادة SSL/TLS</h2>
+                <p class="section-desc">تفاصيل الشهادة، الجهة المُصدرة، تاريخ الانتهاء، SANs</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="ssl-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="ssl">
+                    <span class="btn-label">فحص SSL</span>
+                    <span class="btn-icon">🔒</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-ports">
+            <div class="section-header">
+                <h2 class="section-title-large">▤ فحص المنافذ المفتوحة</h2>
+                <p class="section-desc">اكتشاف المنافذ النشطة والخدمات العاملة على الخادم (30+ منفذ)</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="ports-target" class="text-input" placeholder="example.com أو IP" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="ports">
+                    <span class="btn-label">فحص المنافذ</span>
+                    <span class="btn-icon">▤</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-subdomains">
+            <div class="section-header">
+                <h2 class="section-title-large">⌘ اكتشاف النطاقات الفرعية</h2>
+                <p class="section-desc">جمع Subdomains من سجلات Certificate Transparency</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="subdomains-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="subdomains">
+                    <span class="btn-label">اكتشاف النطاقات</span>
+                    <span class="btn-icon">⌘</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-redirects">
+            <div class="section-header">
+                <h2 class="section-title-large">↬ تتبع سلسلة التحويلات</h2>
+                <p class="section-desc">تتبع 301/302 redirects وكشف رؤوس الأمان في كل قفزة</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="redirects-target" class="text-input" placeholder="example.com" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="redirects">
+                    <span class="btn-label">تتبع التحويلات</span>
+                    <span class="btn-icon">↬</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-reputation">
+            <div class="section-header">
+                <h2 class="section-title-large">✧ سمعة وتحليل IP</h2>
+                <p class="section-desc">AbuseIPDB، GeoIP، تحديد نوع المضيف (استضافة/سكني/موبايل)</p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="reputation-target" class="text-input" placeholder="example.com أو IP" dir="ltr" autocomplete="off">
+                <button class="btn-execute" data-action="reputation">
+                    <span class="btn-label">تحليل السمعة</span>
+                    <span class="btn-icon">✧</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="results-container" id="results" style="display:none;">
+            <div class="results-header">
+                <h3 id="results-title">نتائج الفحص</h3>
+                <div class="results-meta">
+                    <span class="meta-pill" id="results-target-display"></span>
+                    <span class="meta-pill" id="results-time"></span>
+                </div>
+            </div>
+            <div class="results-body" id="results-body"></div>
+        </div>
+
+        <div class="loader-overlay" id="loader" style="display:none;">
+            <div class="loader-card">
+                <div class="loader-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <p class="loader-text" id="loader-text">جاري الفحص...</p>
+                <p class="loader-sub" id="loader-sub">يرجى الانتظار</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="footer-name">VALLAINS</span>
+                <span class="footer-sep">·</span>
+                <span class="footer-sub">منصة فحص احترافية</span>
+            </div>
+            <p class="footer-note">استخدم الأداة بشكل أخلاقي ومسؤول. الفحص لأغراض تعليمية وأمنية مشروعة فقط.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Flask==3.0.0
+Flask-Cors==4.0.0
+requests==2.31.0
+python-whois==0.9.4
+dnspython==2.4.2
+cryptography>=48.0.0
+pyOpenSSL>=26.0.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+# Security dependencies
+blinker>=1.7.0
+safestring>=1.0.0

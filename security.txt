@@ -1,0 +1,25 @@
+# Security.txt — Vallains Security Policy
+
+Contact: https://github.com/security
+Expires: 2025-12-31T23:59:59Z
+
+# Encryption
+Encryption: https://github.com/security.key
+
+# Languages
+Preferred-Languages: en, ar
+
+# Disclosure Policy
+Policy: https://github.com/Vallains/security-policy
+
+# Bug Bounty
+Acknowledgments: https://github.com/Vallains/credits
+
+# Services
+Thanks to:
+- Google Security Team (Safe Browsing API)
+- VirusTotal (Threat Intelligence)
+- crt.sh (Certificate Transparency)
+- Spamhaus (DNSBL)
+- Mozilla Observatory (Security Headers)
+- SSL Labs (Certificate Analysis)

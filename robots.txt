@@ -1,0 +1,18 @@
+# robots.txt — Vallains Security Scanner
+
+User-agent: *
+Disallow: /
+
+# This is a security tool — no search engine should index it
+# The site is for authorized security testing and research only
+
+# Allow well-behaved security crawlers
+User-agent: *
+Allow: /
+
+# Block all crawlers
+User-agent: *
+Disallow: /
+
+# Sitemap (if you have one)
+# Sitemap: https://yoursite.com/sitemap.xml
